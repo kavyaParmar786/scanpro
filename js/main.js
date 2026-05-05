@@ -10,24 +10,34 @@
   const CURSOR_B64 = 'data:image/jpeg;base64,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';
 
   function initCursor() {
-    const cur = document.getElementById('sf-cursor');
-    const glow = document.getElementById('sf-cursor-glow');
-    if (!cur) return;
+    // Cursor is handled via CSS cursor: url() - we only animate the ring
+    const ring = document.getElementById('sf-cursor-ring');
+    if (!ring) return;
 
-    let cx = -100, cy = -100;
+    let rx = -200, ry = -200, mx = -200, my = -200;
 
     document.addEventListener('mousemove', e => {
-      cx = e.clientX; cy = e.clientY;
-      cur.style.left  = cx + 'px';
-      cur.style.top   = cy + 'px';
-      if (glow) { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; }
+      mx = e.clientX;
+      my = e.clientY;
     });
 
+    // Smooth lagging ring
+    function animateRing() {
+      rx += (mx - rx) * 0.14;
+      ry += (my - ry) * 0.14;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
     document.addEventListener('mousedown', () => {
-      cur.style.transform = 'translate(-4px,-4px) scale(0.85) rotate(-10deg)';
+      ring.style.transform = 'translate(-50%,-50%) scale(0.75)';
+      ring.style.borderColor = 'rgba(0,229,200,0.9)';
     });
     document.addEventListener('mouseup', () => {
-      cur.style.transform = 'translate(-4px,-4px) scale(1)';
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.borderColor = 'rgba(200,255,0,0.45)';
     });
   }
 
@@ -49,11 +59,11 @@
 
     // Blob definitions
     const blobs = [
-      { x: 0.15, y: 0.4,  vx:  0.0003, vy:  0.0002, r: 0.38, color: 'rgba(200,255,0,',   alpha: 0.055 },
-      { x: 0.8,  y: 0.2,  vx: -0.0002, vy:  0.0003, r: 0.32, color: 'rgba(0,229,200,',   alpha: 0.045 },
-      { x: 0.6,  y: 0.75, vx:  0.0002, vy: -0.0003, r: 0.28, color: 'rgba(255,107,53,',  alpha: 0.04  },
-      { x: 0.35, y: 0.6,  vx: -0.0003, vy: -0.0002, r: 0.22, color: 'rgba(200,255,0,',   alpha: 0.03  },
-      { x: 0.9,  y: 0.65, vx: -0.0001, vy:  0.0002, r: 0.20, color: 'rgba(0,229,200,',   alpha: 0.035 },
+      { x: 0.12, y: 0.4,  vx:  0.0003, vy:  0.0002, r: 0.42, color: 'rgba(200,255,0,',   alpha: 0.028 },
+      { x: 0.82, y: 0.22, vx: -0.0002, vy:  0.0003, r: 0.36, color: 'rgba(0,229,200,',   alpha: 0.022 },
+      { x: 0.58, y: 0.72, vx:  0.0002, vy: -0.0002, r: 0.30, color: 'rgba(255,107,53,',  alpha: 0.018 },
+      { x: 0.38, y: 0.58, vx: -0.0002, vy: -0.0002, r: 0.24, color: 'rgba(200,255,0,',   alpha: 0.015 },
+      { x: 0.88, y: 0.62, vx: -0.0001, vy:  0.0002, r: 0.22, color: 'rgba(0,229,200,',   alpha: 0.016 },
     ];
 
     let t = 0;
@@ -63,17 +73,17 @@
       const W = canvas.width, H = canvas.height;
 
       // clear with semi-transparent ink to create trails
-      ctx.fillStyle = 'rgba(7,7,13,0.18)';
+      ctx.fillStyle = 'rgba(7,7,13,0.55)';
       ctx.fillRect(0, 0, W, H);
 
       blobs.forEach((b, i) => {
         // Lissajous-like motion
-        const px = (b.x + Math.sin(t * b.vx * 1000 + i * 1.3) * 0.25) * W;
-        const py = (b.y + Math.cos(t * b.vy * 1000 + i * 0.9) * 0.22) * H;
+        const px = (b.x + Math.sin(t * b.vx * 55 + i * 1.3) * 0.18) * W;
+        const py = (b.y + Math.cos(t * b.vy * 55 + i * 0.9) * 0.16) * H;
         const radius = b.r * Math.min(W, H);
 
         // Pulsing alpha
-        const pulse = b.alpha + Math.sin(t * 0.02 + i) * 0.015;
+        const pulse = b.alpha + Math.sin(t * 0.008 + i) * 0.005;
 
         const grad = ctx.createRadialGradient(px, py, 0, px, py, radius);
         grad.addColorStop(0,   b.color + (pulse * 1.4).toFixed(3) + ')');
@@ -86,18 +96,7 @@
         ctx.fill();
       });
 
-      // Subtle shimmer lines
-      if (t % 3 === 0) {
-        const lineY = (Math.sin(t * 0.01) * 0.5 + 0.5) * H;
-        const lineGrad = ctx.createLinearGradient(0, lineY, W, lineY);
-        lineGrad.addColorStop(0,   'rgba(200,255,0,0)');
-        lineGrad.addColorStop(0.3, 'rgba(200,255,0,0.015)');
-        lineGrad.addColorStop(0.5, 'rgba(200,255,0,0.025)');
-        lineGrad.addColorStop(0.7, 'rgba(200,255,0,0.015)');
-        lineGrad.addColorStop(1,   'rgba(200,255,0,0)');
-        ctx.fillStyle = lineGrad;
-        ctx.fillRect(0, lineY - 1, W, 2);
-      }
+      // shimmer lines removed — they caused haze
 
       requestAnimationFrame(draw);
     }
