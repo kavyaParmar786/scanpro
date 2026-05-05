@@ -1,0 +1,176 @@
+/* ============================================
+   SCANFLOW — DYNAMIC ISLAND NAVBAR
+   ============================================ */
+
+/* ── NAVBAR WRAPPER ── */
+#sf-nav-wrap {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── THE ISLAND ── */
+#sf-island {
+  background: rgba(10,10,18,0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 10px 14px 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.5),
+    0 0 0 0.5px rgba(255,255,255,0.05) inset,
+    0 1px 0 rgba(255,255,255,0.08) inset;
+  transition:
+    width 0.5s cubic-bezier(0.34,1.56,0.64,1),
+    padding 0.4s cubic-bezier(0.34,1.56,0.64,1),
+    background 0.3s;
+  white-space: nowrap;
+  overflow: visible;
+  width: auto;
+  min-width: 0;
+}
+
+#sf-island.expanded {
+  background: rgba(10,10,18,0.95);
+  border-color: rgba(200,255,0,0.15);
+}
+
+/* ── LOGO INSIDE ISLAND ── */
+.island-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 16px;
+  letter-spacing: -0.5px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.island-logo-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(200,255,0,0.7);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── SEPARATOR ── */
+.island-sep {
+  width: 1px; height: 20px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 14px;
+  flex-shrink: 0;
+}
+
+/* ── LINKS ── */
+.island-links {
+  display: flex; align-items: center; gap: 4px;
+  flex-shrink: 0;
+}
+.island-link {
+  padding: 7px 14px;
+  border-radius: 100px;
+  font-size: 13px; font-weight: 400;
+  color: var(--muted);
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+  position: relative;
+}
+.island-link:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.island-link.active { color: #fff; }
+.island-link.active::after {
+  content: '';
+  position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(200,255,0,0.8);
+}
+
+/* ── CTA BUTTON INSIDE ISLAND ── */
+.island-cta {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--accent); color: var(--ink);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 13px;
+  padding: 9px 18px; border-radius: 100px;
+  border: none; flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: 8px;
+}
+.island-cta:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 24px rgba(200,255,0,0.45);
+}
+
+/* ── EXPANDED STATE — notification pill ── */
+.island-notif {
+  display: flex; align-items: center; gap: 10px;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 0.5s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+}
+.island-notif.show {
+  max-width: 220px;
+  opacity: 1;
+}
+.notif-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(200,255,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.notif-text { font-size: 12px; white-space: nowrap; }
+.notif-title { font-weight: 600; color: #fff; }
+.notif-sub { color: var(--muted); font-size: 11px; }
+
+/* ── MOBILE HAMBURGER ── */
+.island-hamburger {
+  display: none;
+  flex-direction: column; gap: 4px;
+  padding: 8px; cursor: none;
+  background: none; border: none;
+}
+.island-hamburger span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--muted); border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ── MOBILE MENU DROP ── */
+.island-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px; left: 50%; transform: translateX(-50%);
+  width: calc(100vw - 40px); max-width: 400px;
+  background: rgba(10,10,18,0.96);
+  border: 1px solid var(--border2);
+  border-radius: var(--r2);
+  padding: 12px;
+  backdrop-filter: blur(24px);
+  flex-direction: column; gap: 4px;
+  z-index: 999;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: slideIn 0.25s ease;
+}
+.island-mobile-menu.open { display: flex; }
+.mob-link {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px; font-weight: 400;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.mob-link:hover { color: #fff; background: rgba(255,255,255,0.06); }
+
+@media (max-width: 700px) {
+  .island-links, .island-sep, .island-cta { display: none; }
+  .island-hamburger { display: flex; }
+  #sf-island { padding: 10px 14px; }
+}

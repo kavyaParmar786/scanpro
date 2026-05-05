@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — ScanFlow</title>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+<div id="sf-cursor"><img src="data:image/jpeg;base64,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" alt=""></div>
+<div id="sf-cursor-glow"></div>
+<div id="sf-bg" aria-hidden="true"></div>
+<div id="sf-grain" aria-hidden="true"></div>
+
+<div class="sf-page">
+  <!-- DASHBOARD LAYOUT -->
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar">
+      <div class="dash-logo">
+        <a href="../index.html" class="island-logo"><div class="island-logo-dot"></div>ScanFlow</a>
+      </div>
+      <nav class="dash-nav">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);padding:0 14px;margin-bottom:6px;">Main</div>
+        <a href="dashboard.html" class="dash-link active"><span class="dash-link-icon">⊞</span> Dashboard</a>
+        <a href="#" class="dash-link" onclick="showDocs();return false;"><span class="dash-link-icon">📄</span> All Documents</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">📁</span> Folders</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">⭐</span> Favourites</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">🕒</span> Recent</a>
+
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);padding:8px 14px 6px;margin-top:12px;">Tools</div>
+        <a href="scanner.html" class="dash-link"><span class="dash-link-icon">📷</span> Scan Document</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">🔍</span> OCR Extract</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">🔏</span> Signatures</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">📱</span> QR Scanner</a>
+
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);padding:8px 14px 6px;margin-top:12px;">Team</div>
+        <a href="#" class="dash-link"><span class="dash-link-icon">🤝</span> Shared Rooms</a>
+        <a href="#" class="dash-link"><span class="dash-link-icon">👥</span> Members</a>
+
+        <div style="margin-top:auto;padding-top:16px;">
+          <a href="#" class="dash-link"><span class="dash-link-icon">⚙️</span> Settings</a>
+          <a href="login.html" class="dash-link" style="color:var(--accent3);"><span class="dash-link-icon">↩</span> Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="dash-bottom">
+        <div class="stor-widget">
+          <div class="stor-w-label">Storage</div>
+          <div class="stor-w-bar"><div class="stor-w-fill"></div></div>
+          <div class="stor-w-info">3.4 GB of 10 GB used</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="user-av">AK</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">Aryan Kumar</div>
+            <div style="font-size:11px;color:var(--muted);">Pro Plan</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dash-main">
+
+      <!-- TOP BAR -->
+      <div class="dash-topbar">
+        <div class="dash-search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search documents, OCR text..." id="dash-search-input">
+        </div>
+        <div class="dash-user">
+          <div class="notif-btn">
+            🔔
+            <div class="notif-pip"></div>
+          </div>
+          <div class="user-av">AK</div>
+          <div style="font-size:13px;font-weight:500;">Aryan Kumar</div>
+        </div>
+      </div>
+
+      <!-- GREETING -->
+      <div style="margin-bottom:28px;">
+        <h1 class="dash-section-title" style="font-size:28px;">Good morning, Aryan 👋</h1>
+        <p style="font-size:14px;color:var(--muted);">You have <strong style="color:#fff;">3 documents</strong> awaiting OCR and <strong style="color:#fff;">1 signature</strong> request.</p>
+      </div>
+
+      <!-- STATS ROW -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-num" style="color:var(--accent);">48</div>
+          <div class="stat-card-label">Total Documents</div>
+          <div class="stat-card-change change-up">↑ 12 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num" style="color:var(--accent2);">312</div>
+          <div class="stat-card-label">Total Scans</div>
+          <div class="stat-card-change change-up">↑ 47 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">3.4<span style="font-size:16px;font-weight:400;color:var(--muted);">GB</span></div>
+          <div class="stat-card-label">Storage Used</div>
+          <div class="stat-card-change" style="color:var(--muted);">6.6 GB remaining</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num" style="color:var(--accent3);">5</div>
+          <div class="stat-card-label">Pending Actions</div>
+          <div class="stat-card-change change-dn">3 OCR · 1 sign · 1 expiry</div>
+        </div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div style="margin-bottom:32px;">
+        <div class="dash-recent-title" style="margin-top:0;">Quick Actions</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+          <a href="scanner.html" style="background:rgba(200,255,0,0.1);border:1px solid rgba(200,255,0,0.22);border-radius:var(--r);padding:20px;text-align:center;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            <div style="font-size:28px;margin-bottom:8px;">📷</div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--accent);">New Scan</div>
+          </a>
+          <div onclick="sfToast('📂','Folder created','New folder ready')" style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--border2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+            <div style="font-size:28px;margin-bottom:8px;">📁</div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">New Folder</div>
+          </div>
+          <div onclick="sfToast('🔗','Link copied!','Share link ready to send')" style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--border2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+            <div style="font-size:28px;margin-bottom:8px;">🤝</div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Share Room</div>
+          </div>
+          <div onclick="sfToast('📦','Export started','Creating ZIP of all documents...')" style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--border2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+            <div style="font-size:28px;margin-bottom:8px;">📦</div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Export All</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT DOCUMENTS -->
+      <div class="dash-recent-title">Recent Documents</div>
+      <div class="dash-docs-grid" id="docs-grid">
+        <!-- populated by JS -->
+      </div>
+
+      <!-- ACTIVITY FEED -->
+      <div class="dash-recent-title" style="margin-top:36px;">Recent Activity</div>
+      <div style="background:var(--ink2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;">
+        <div id="activity-feed"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FAB -->
+  <button class="scan-fab" onclick="window.location.href='scanner.html'" title="New Scan">+</button>
+
+</div><!-- /sf-page -->
+
+<div id="sf-toast"><div class="toast-ico">✅</div><div><div class="toast-title">Done</div><div class="toast-msg"></div></div></div>
+<script src="../js/main.js"></script>
+<script>
+const docs = [
+  { emoji:'📄', name:'Lease Agreement 2024', meta:'4 pages · PDF · 2h ago',   bg:'linear-gradient(135deg,#142114,#253a06)', tag:'AI',  tagClass:'tag-ai'  },
+  { emoji:'🧾', name:'Invoice_AmarTech_Mar', meta:'1 page · PDF · Yesterday', bg:'linear-gradient(135deg,#141426,#06063e)', tag:'OCR', tagClass:'tag-ocr' },
+  { emoji:'📝', name:'NDA_Client_Signed',    meta:'2 pages · PDF · 3d ago',   bg:'linear-gradient(135deg,#2a1a08,#3a2808)', tag:'SIG', tagClass:'tag-sig' },
+  { emoji:'🏦', name:'Bank_Statement_Feb',   meta:'6 pages · PDF · 4d ago',   bg:'linear-gradient(135deg,#0a1a2a,#0a2030)', tag:'OCR', tagClass:'tag-ocr' },
+  { emoji:'🪪', name:'Aadhar_Card_Copy',     meta:'1 page · PDF · 5d ago',    bg:'linear-gradient(135deg,#1a0a2a,#2a0a3a)', tag:'AI',  tagClass:'tag-ai'  },
+  { emoji:'📑', name:'Tax_Return_FY24',      meta:'12 pages · PDF · 1w ago',  bg:'linear-gradient(135deg,#1a1a0a,#2a2a0a)', tag:'OCR', tagClass:'tag-ocr' },
+  { emoji:'🏥', name:'Medical_Report_Mar',   meta:'3 pages · PDF · 1w ago',   bg:'linear-gradient(135deg,#0a2a1a,#0a3a20)', tag:'AI',  tagClass:'tag-ai'  },
+  { emoji:'📜', name:'Employment_Contract',  meta:'8 pages · PDF · 2w ago',   bg:'linear-gradient(135deg,#2a0a0a,#3a1010)', tag:'SIG', tagClass:'tag-sig' },
+];
+
+const grid = document.getElementById('docs-grid');
+docs.forEach(d => {
+  grid.innerHTML += `
+  <div class="dash-doc-card" onclick="sfToast('📄','Opening...','${d.name}')">
+    <div class="ddc-thumb" style="background:${d.bg};">
+      <span style="position:relative;z-index:1;">${d.emoji}</span>
+      <span class="doc-tag-mini ${d.tagClass}" style="position:absolute;top:8px;right:8px;z-index:2;">${d.tag}</span>
+    </div>
+    <div class="ddc-info">
+      <div class="ddc-name">${d.name}</div>
+      <div class="ddc-meta">${d.meta}</div>
+    </div>
+    <div class="ddc-actions">
+      <div class="ddc-btn" title="Edit" onclick="event.stopPropagation();sfToast('✏️','Edit mode','Opening editor...')">✏️</div>
+      <div class="ddc-btn" title="Share" onclick="event.stopPropagation();sfToast('🔗','Link copied!','Share link ready')">🔗</div>
+      <div class="ddc-btn" title="Delete" onclick="event.stopPropagation();sfToast('🗑','Deleted','Moved to Trash')">🗑</div>
+    </div>
+  </div>`;
+});
+
+const activities = [
+  { icon:'☁️', color:'var(--accent)',  title:'Lease Agreement 2024 synced to Cloudinary',  time:'2 hours ago'  },
+  { icon:'✨', color:'var(--accent)',  title:'AI named: Invoice_AmarTech_Mar2024',           time:'Yesterday'    },
+  { icon:'🔍', color:'var(--accent2)', title:'OCR completed on Bank_Statement_Feb',          time:'4 days ago'   },
+  { icon:'🔏', color:'var(--accent3)', title:'NDA_Client signed with digital signature',     time:'3 days ago'   },
+  { icon:'📦', color:'var(--accent2)', title:'Tax_Return_FY24 exported as PDF',              time:'1 week ago'   },
+];
+
+const feed = document.getElementById('activity-feed');
+activities.forEach((a, i) => {
+  feed.innerHTML += `
+  <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;${i < activities.length-1 ? 'border-bottom:1px solid var(--border);' : ''}transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='transparent'">
+    <div style="width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">${a.icon}</div>
+    <div style="flex:1;font-size:13px;">${a.title}</div>
+    <div style="font-size:11px;color:var(--muted);white-space:nowrap;">${a.time}</div>
+  </div>`;
+});
+
+// Search filter
+document.getElementById('dash-search-input').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('.dash-doc-card').forEach(c => {
+    const name = c.querySelector('.ddc-name').textContent.toLowerCase();
+    c.style.display = name.includes(q) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>

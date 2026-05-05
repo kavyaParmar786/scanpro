@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scanner — ScanFlow</title>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+<div id="sf-cursor"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABfAF8DASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAAAAEDBwgCBQkEBv/EADoQAAEDAwEEBgYIBwAAAAAAAAEAAgMEBQYRBxIhoQgxQUJRcRMiMkNSkRQVU2FigbHCI2NyksHS8v/EABkBAAIDAQAAAAAAAAAAAAAAAAEDAAIEBf/EACQRAAICAgICAgIDAAAAAAAAAAABAhEDEgQhMUEFE1FxgaHw/9oADAMBAAIRAxEAPwCpKTVJqhd6znghSj0YrXYrvtTpKW+07J42Rulha8+qZG6buo7fI8FPu2Lo0227Quu2NMbbqt433NaSYpD+38gkyzRjLVipZVGVNFMUi32ZYfkOJXF1FfLbNTPB9VxHqvHiD4LQJqafgammrQIQhQsCEJEGQEIQqsJmhJqhXK0fT7K7x9RbQrLci4tjiq2GXjpqzeGoXUPEaqO4Y/A/g5pYOB48Dx/yuSoJB1BII7QumPRsv/19s7tda5wJmpgT5tO5+1YuZHpMrF65ov8APRvs82dWDKrdJR11BDPG4ew9oIH3jwKp7tk6NN1sk09fiYfUUjdXGlkOsg/pPDe8gFfdM1dLBVRlk0YcOYWXHmlDwOnxVd4+n/RyHrqOroKp9LW001NOw6OjlYWuHmCmF0d2v7CsbzOmkklphHUnUtqYW6SN/wBvzVMNquxfKsInln+jvrraHerURjUtH4h2HyW/HyIz/YhTp6zVMjBCCCCQQQR2FCbY0EIQoQVCEK4AVzugdkZnx6ptU0vrUlTusb/LLQdf7iqYqc+hpkAtO0iW3SO4XCH0bBr1OBDtfk1Jzx2gxWXqOy9dnRJCapJRNTRyjvtBTq5B0k7VgtbeLLQ3OF7J4m7zgQTp1+a9tRU08AJmlawDxK1lZklppW6uqWu8iB+qKv0KyyxVWRorZtt6M1suwkuOOxxWyt01Po2fwpD947CfHVVHzrCciwy5vob7QPhcDo2Ro3o3+ThwK6OZTtcxCxgsuV1oacaa6TP14flqq49IDbRs8yLELnaKGmbcaypYGQSMYCxh3gdd48W8AepbcOTJ4a6OfuoySxu1/vZU5ISglIthqM0JNUK1goNV9JswvElhz+zXSNxa6GpaNQfi9U/qvm1lE90UrJGHRzHBw8wqvtUBq1R1txKpbU2eNzXhwHAEHUEdi2dTK2CB8zzo1o1UV9GS/svezi0z+kL3mkjbIT8bW+svdt6zelw/D6yukla10UZLWk+288AOYK5Dg9tSY82nHT9+P5K99KnbXd7Lk8dkxqrENS1m/VSA66A+y0EdRGh1Vbr9tBzS+gtuuR19UzTQNfJwA8FqMku9Zf77WXivfv1NXK6WQ9mpOvD7lriV04Y1FULx4klb8mb5Hu9t7neZ1WBSITBwIS6FGhQCKjQraR2yU9TSn47PKe4UzRi9jShpPYlDHeC+iiscp7hXqix+Uj2D8kVjZLZZzoN5T6PFKu0vIMlDK54GvEh//KjbphZ7JkmXDHaKYupLe7WfQ6tfKR1gjsDSB5hfB2Whu1qm9NbayppH6gkwyOZvaeOnWlfj89RO6ecukked5znHUkpceI1PYUsT3u+j4AUzz1A/JZso5D3SpEixg/ByXrhxj8HJaPpY6mRo23SHqaU8y1ynun5KUIsaaO5yXpjxxo7nJH6Q6sitlnlPdKeZZJfhPyUqsx9g7ieZYWAexyR+lBUTCDEdPdcl7ocTA93yUzsx2MdjU8zHo/ALO+ZBEoh6LFmj3fJeqPGAPdclL8ePx+ATzLBF4BUfPiiERsxvT3fJPsx3T3fJS22wxeATrbHF4BLfyJLIlZj5+z5J5tgd9nyUsMskQ7oTrbND8IS38iyWRO3H3n3fJOjH5Pg5KV22iEd0LMWqEdgS3z5E2RFDcdkPc5J1uNyaexyUrNtkI7oWf1fCO6PkqPnS/IN0f//Z" alt=""></div>
+<div id="sf-cursor-glow"></div>
+<div id="sf-bg" aria-hidden="true"></div>
+<div id="sf-grain" aria-hidden="true"></div>
+
+<div id="sf-nav-wrap">
+  <nav id="sf-island">
+    <a href="../index.html" class="island-logo"><div class="island-logo-dot"></div>ScanFlow</a>
+    <div class="island-sep"></div>
+    <div class="island-links">
+      <a href="../index.html"  class="island-link">Home</a>
+      <a href="features.html"  class="island-link">Features</a>
+      <a href="scanner.html"   class="island-link active">Scanner</a>
+      <a href="pricing.html"   class="island-link">Pricing</a>
+      <a href="dashboard.html" class="island-link">Dashboard</a>
+    </div>
+    <div id="island-notif" class="island-notif"><div class="notif-icon">✅</div><div class="notif-text"><div class="notif-title">Uploaded</div><div class="notif-sub">To Cloudinary CDN</div></div></div>
+    <a href="login.html" class="island-cta">Start free <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <button class="island-hamburger" id="sf-ham"><span></span><span></span><span></span></button>
+  </nav>
+</div>
+<div id="sf-mob-menu" class="island-mobile-menu">
+  <a href="../index.html" class="mob-link">🏠 Home</a>
+  <a href="features.html" class="mob-link">⚡ Features</a>
+  <a href="scanner.html"  class="mob-link">📷 Scanner</a>
+  <a href="pricing.html"  class="mob-link">💳 Pricing</a>
+  <a href="dashboard.html" class="mob-link">📊 Dashboard</a>
+  <a href="login.html"    class="mob-link" style="color:var(--accent);font-weight:600;">→ Get started free</a>
+</div>
+
+<div class="sf-page">
+  <div class="scanner-page">
+    <div class="reveal" style="text-align:center;margin-bottom:44px;">
+      <div class="sec-label" style="justify-content:center;">Live Interface</div>
+      <h1 class="display-md" style="font-size:clamp(36px,5vw,64px);margin-bottom:12px;">The editor. <span style="color:var(--accent)">Reimagined.</span></h1>
+      <p style="font-size:16px;color:var(--muted);max-width:480px;margin:0 auto;font-weight:300;">Every control exactly where you need it. Sliders that feel instant. Results that look professional.</p>
+    </div>
+
+    <div class="scanner-ui reveal">
+      <div class="scanner-header">
+        <div class="scan-filename">Invoice_March_2024.pdf</div>
+        <div class="scan-tabs">
+          <button class="scan-tab active" data-panel="panel-crop">Crop</button>
+          <button class="scan-tab" data-panel="panel-enhance">Enhance</button>
+          <button class="scan-tab" data-panel="panel-ocr">OCR</button>
+        </div>
+        <div class="scan-toolbar">
+          <div class="tool-btn" title="Undo">↩</div>
+          <div class="tool-btn" title="Redo">↪</div>
+          <div class="tool-btn" title="Pages">⊞</div>
+          <div class="tool-btn" title="More">⋮</div>
+        </div>
+      </div>
+
+      <div class="scanner-workspace">
+        <!-- CANVAS -->
+        <div class="scan-canvas">
+          <div class="doc-paper">
+            <div class="paper-content">
+              <div class="paper-h">TAX INVOICE</div>
+              <div class="p-line"></div><div class="p-line s"></div>
+              <br>
+              <div class="p-para"></div><div class="p-para"></div><div class="p-para p"></div>
+              <br>
+              <div class="p-para"></div><div class="p-para"></div>
+              <br>
+              <div class="p-line"></div><div class="p-line s"></div>
+              <div class="p-para"></div><div class="p-para p"></div>
+            </div>
+            <div class="crop-frame">
+              <div class="crop-h tl"></div><div class="crop-h tr"></div>
+              <div class="crop-h bl"></div><div class="crop-h br"></div>
+            </div>
+          </div>
+          <div class="canvas-btns">
+            <button class="cv-btn s" onclick="sfToast('↩','Reset','Crop reset to original')">Reset</button>
+            <button class="cv-btn p" onclick="sfToast('✅','Crop Applied','Processing with Cloudinary...')">Apply Crop</button>
+          </div>
+        </div>
+
+        <!-- PANEL -->
+        <div class="scan-panel">
+
+          <!-- CROP PANEL -->
+          <div id="panel-crop" class="scan-panel-content" style="display:flex;flex-direction:column;">
+            <div class="panel-sec">
+              <div class="panel-lbl">Crop Preset</div>
+              <div class="chip-row">
+                <div class="chip active">Auto</div>
+                <div class="chip">Portrait</div>
+                <div class="chip">Landscape</div>
+                <div class="chip">Square</div>
+              </div>
+            </div>
+            <div class="panel-sec">
+              <div class="panel-lbl">Rotation</div>
+              <div class="slider-group">
+                <div class="sl-row">
+                  <div class="sl-top"><span>Angle</span><span class="sl-val" id="v-angle">0°</span></div>
+                  <input type="range" min="-45" max="45" value="0" data-target="v-angle" data-suffix="°">
+                </div>
+              </div>
+            </div>
+            <div class="panel-sec">
+              <div class="panel-lbl">Scan Mode</div>
+              <div class="chip-row">
+                <div class="chip active">Single</div>
+                <div class="chip">Multi-page</div>
+                <div class="chip">ID Card</div>
+                <div class="chip">Whiteboard</div>
+              </div>
+            </div>
+            <div class="panel-sec">
+              <div class="panel-lbl">Auto-fix</div>
+              <div class="toggle-row"><span>Perspective correction</span><div class="sf-toggle on"></div></div>
+              <div class="toggle-row" style="margin-top:8px;"><span>Auto-deskew</span><div class="sf-toggle on"></div></div>
+            </div>
+          </div>
+
+          <!-- ENHANCE PANEL -->
+          <div id="panel-enhance" class="scan-panel-content" style="display:none;flex-direction:column;">
+            <div class="panel-sec">
+              <div class="panel-lbl">Enhancement</div>
+              <div class="slider-group">
+                <div class="sl-row">
+                  <div class="sl-top"><span>Brightness</span><span class="sl-val" id="v-bright">+20</span></div>
+                  <input type="range" min="-100" max="100" value="20" data-target="v-bright">
+                </div>
+                <div class="sl-row">
+                  <div class="sl-top"><span>Contrast</span><span class="sl-val" id="v-cont">+15</span></div>
+                  <input type="range" min="-100" max="100" value="15" data-target="v-cont">
+                </div>
+                <div class="sl-row">
+                  <div class="sl-top"><span>Sharpness</span><span class="sl-val" id="v-sharp">+10</span></div>
+                  <input type="range" min="0" max="100" value="10" data-target="v-sharp">
+                </div>
+                <div class="sl-row">
+                  <div class="sl-top"><span>Saturation</span><span class="sl-val" id="v-sat">0</span></div>
+                  <input type="range" min="-100" max="100" value="0" data-target="v-sat">
+                </div>
+              </div>
+            </div>
+            <div class="panel-sec">
+              <div class="panel-lbl">Filter</div>
+              <div class="chip-row">
+                <div class="chip active">Original</div>
+                <div class="chip">B&amp;W</div>
+                <div class="chip">Whiteboard</div>
+                <div class="chip">Magic</div>
+                <div class="chip">Vivid</div>
+              </div>
+            </div>
+            <div class="panel-sec">
+              <div class="panel-lbl">Auto-fix</div>
+              <div class="toggle-row"><span>Shadow removal</span><div class="sf-toggle on"></div></div>
+              <div class="toggle-row" style="margin-top:8px;"><span>Auto-level</span><div class="sf-toggle"></div></div>
+              <div class="toggle-row" style="margin-top:8px;"><span>Noise reduction</span><div class="sf-toggle on"></div></div>
+            </div>
+          </div>
+
+          <!-- OCR PANEL -->
+          <div id="panel-ocr" class="scan-panel-content" style="display:none;flex-direction:column;height:100%;">
+            <div class="panel-sec">
+              <div class="panel-lbl">Language</div>
+              <div class="chip-row">
+                <div class="chip active">English</div>
+                <div class="chip">Hindi</div>
+                <div class="chip">Auto-detect</div>
+              </div>
+            </div>
+            <div class="ocr-output">
+              <div class="ocr-text">
+                <span class="ocr-hl">TAX INVOICE</span><br>
+                Invoice No: <span class="ocr-hl">INV-2024-0342</span><br>
+                Date: 15 March 2024<br><br>
+                Bill To:<br>
+                <span class="ocr-hl">Amar Technologies Pvt Ltd</span><br>
+                123 MG Road, Bengaluru<br>
+                Karnataka - 560001<br><br>
+                Description: Web Dev Services<br>
+                Amount: ₹85,000<br>
+                GST (18%): ₹15,300<br>
+                <span class="ocr-hl">Total: ₹1,00,300</span>
+              </div>
+            </div>
+            <div class="ai-suggest">
+              ✨ AI suggests: <strong>Invoice_AmarTech_Mar2024</strong><br>
+              <span style="color:var(--muted);font-size:10px;">Category: Invoices · Confidence: 98%</span>
+            </div>
+            <div style="padding:0 16px 12px;display:flex;gap:8px;">
+              <button onclick="sfToast('📋','Copied!','OCR text copied to clipboard')" style="flex:1;padding:9px;background:rgba(255,255,255,0.07);border:1px solid var(--border2);border-radius:8px;color:#fff;font-size:12px;">Copy Text</button>
+              <button onclick="sfToast('📝','Exported!','Saved as DOCX')" style="flex:1;padding:9px;background:rgba(255,255,255,0.07);border:1px solid var(--border2);border-radius:8px;color:#fff;font-size:12px;">Save as DOCX</button>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <button class="export-btn" onclick="sfToast('☁️','Uploading to Cloudinary','Your PDF will be ready in seconds...')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Export as PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page strip -->
+    <div class="reveal" style="margin-top:20px;display:flex;gap:10px;align-items:center;">
+      <div style="font-size:12px;color:var(--muted);font-weight:500;">Pages:</div>
+      <div style="display:flex;gap:8px;">
+        <div style="width:48px;height:60px;background:rgba(200,255,0,0.1);border:1.5px solid var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--accent);font-weight:700;">1</div>
+        <div style="width:48px;height:60px;background:var(--ink2);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);">2</div>
+        <div style="width:48px;height:60px;background:var(--ink2);border:1px dashed var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);" onclick="sfToast('📷','Camera ready','Point at your next page')">+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="island-logo"><div class="island-logo-dot"></div>ScanFlow</a><p>Intelligent document scanning for the paperless world.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="#">OCR Scanner</a></li><li><a href="#">PDF Creator</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 ScanFlow.</span><span>Made with ♥</span></div>
+  </footer>
+</div>
+
+<div id="sf-toast"><div class="toast-ico">✅</div><div><div class="toast-title">Done</div><div class="toast-msg"></div></div></div>
+<script src="../js/main.js"></script>
+<script>
+// Scan tab logic for this page
+document.querySelectorAll('.scan-tab[data-panel]').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.scan-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.scan-panel-content').forEach(p => p.style.display = 'none');
+    const el = document.getElementById(tab.dataset.panel);
+    if (el) { el.style.display = 'flex'; el.style.flexDirection = 'column'; }
+  });
+});
+</script>
+</body>
+</html>

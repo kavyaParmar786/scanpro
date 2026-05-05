@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScanFlow — Intelligent Document Scanner</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="sf-cursor"><img src="data:image/jpeg;base64,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" alt=""></div>
+<div id="sf-cursor-glow"></div>
+<!-- BACKGROUND -->
+<div id="sf-bg" aria-hidden="true"></div>
+<div id="sf-grain" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<div id="sf-nav-wrap">
+  <nav id="sf-island">
+    <a href="index.html" class="island-logo"><div class="island-logo-dot"></div>ScanFlow</a>
+    <div class="island-sep"></div>
+    <div class="island-links">
+      <a href="index.html"            class="island-link active" data-page="index.html">Home</a>
+      <a href="pages/features.html"   class="island-link" data-page="features.html">Features</a>
+      <a href="pages/scanner.html"    class="island-link" data-page="scanner.html">Scanner</a>
+      <a href="pages/pricing.html"    class="island-link" data-page="pricing.html">Pricing</a>
+      <a href="pages/dashboard.html"  class="island-link" data-page="dashboard.html">Dashboard</a>
+    </div>
+    <div id="island-notif" class="island-notif">
+      <div class="notif-icon">📄</div>
+      <div class="notif-text"><div class="notif-title">Synced</div><div class="notif-sub">Lease_2024.pdf</div></div>
+    </div>
+    <a href="pages/login.html" class="island-cta">Start free <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <button class="island-hamburger" id="sf-ham"><span></span><span></span><span></span></button>
+  </nav>
+</div>
+<div id="sf-mob-menu" class="island-mobile-menu">
+  <a href="index.html"           class="mob-link">🏠 Home</a>
+  <a href="pages/features.html"  class="mob-link">⚡ Features</a>
+  <a href="pages/scanner.html"   class="mob-link">📷 Scanner</a>
+  <a href="pages/pricing.html"   class="mob-link">💳 Pricing</a>
+  <a href="pages/dashboard.html" class="mob-link">📊 Dashboard</a>
+  <a href="pages/login.html"     class="mob-link" style="color:var(--accent);font-weight:600;">→ Get started free</a>
+</div>
+
+<div class="sf-page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-page">
+    <div class="hero-badge">
+      <span class="badge badge-green"><span class="badge-dot"></span>Now with AI auto-naming &amp; OCR</span>
+    </div>
+
+    <h1 class="hero-title display">
+      Scan. Enhance.
+      <span class="accent">Organise.</span>
+      <span class="dimmed">Effortlessly.</span>
+    </h1>
+
+    <p class="hero-sub">The intelligent document scanner that turns paper chaos into organised, searchable, shareable files — on web and mobile.</p>
+
+    <div class="hero-actions">
+      <a href="pages/scanner.html" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Scan your first doc free
+      </a>
+      <a href="pages/features.html" class="btn btn-ghost">See all features →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">2<sup>M+</sup></div>
+        <div class="stat-label">Docs scanned</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">99<sup>%</sup></div>
+        <div class="stat-label">OCR accuracy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">&lt;3<sup>s</sup></div>
+        <div class="stat-label">Avg. scan time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.9<sup>★</sup></div>
+        <div class="stat-label">User rating</div>
+      </div>
+    </div>
+
+    <!-- App window mockup -->
+    <div class="hero-window-wrap">
+      <div class="app-window">
+        <div class="win-bar">
+          <div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div>
+          <div class="win-url">app.scanflow.io/documents</div>
+        </div>
+        <div class="win-body">
+          <div class="win-sidebar">
+            <div class="win-nav-item active">📄 All Documents</div>
+            <div class="win-nav-item">📁 Folders</div>
+            <div class="win-nav-item">⭐ Favourites</div>
+            <div class="win-nav-item">🗑 Trash</div>
+            <div class="storage-bar">
+              <div class="stor-label">Storage</div>
+              <div class="stor-track"><div class="stor-fill"></div></div>
+              <div class="stor-note">3.4 GB of 10 GB</div>
+            </div>
+          </div>
+          <div class="win-main">
+            <div class="win-main-hdr">
+              <div class="win-main-title">My Documents</div>
+              <div class="win-scan-btn">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                New Scan
+              </div>
+            </div>
+            <div class="doc-grid">
+              <div class="doc-thumb-card">
+                <div class="doc-tag-mini tag-ai">AI</div>
+                <div class="doc-thumb-img dti-1">📄</div>
+                <div class="doc-info-mini">
+                  <div class="doc-name-mini">Lease Agreement 2024</div>
+                  <div class="doc-meta-mini">4 pages · 2h ago</div>
+                </div>
+              </div>
+              <div class="doc-thumb-card">
+                <div class="doc-tag-mini tag-ocr">OCR</div>
+                <div class="doc-thumb-img dti-2">🧾</div>
+                <div class="doc-info-mini">
+                  <div class="doc-name-mini">Invoice_AmarTech</div>
+                  <div class="doc-meta-mini">1 page · Yesterday</div>
+                </div>
+              </div>
+              <div class="doc-thumb-card">
+                <div class="doc-tag-mini tag-sig">Signed</div>
+                <div class="doc-thumb-img dti-3">📝</div>
+                <div class="doc-info-mini">
+                  <div class="doc-name-mini">NDA_Client_Signed</div>
+                  <div class="doc-meta-mini">2 pages · 3d ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="mi-icon">⚡</span> Instant edge detection</div>
+      <div class="marquee-item"><span class="mi-icon">🔍</span> OCR in 40+ languages</div>
+      <div class="marquee-item"><span class="mi-icon">✨</span> AI auto-naming</div>
+      <div class="marquee-item"><span class="mi-icon">☁️</span> Cloudinary-powered storage</div>
+      <div class="marquee-item"><span class="mi-icon">📄</span> Multi-page PDF export</div>
+      <div class="marquee-item"><span class="mi-icon">🔏</span> Digital signatures</div>
+      <div class="marquee-item"><span class="mi-icon">📱</span> QR code scanner</div>
+      <div class="marquee-item"><span class="mi-icon">🔄</span> Real-time sync</div>
+      <div class="marquee-item"><span class="mi-icon">🪪</span> ID card mode</div>
+      <div class="marquee-item"><span class="mi-icon">🤖</span> Claude AI integration</div>
+      <!-- repeat -->
+      <div class="marquee-item"><span class="mi-icon">⚡</span> Instant edge detection</div>
+      <div class="marquee-item"><span class="mi-icon">🔍</span> OCR in 40+ languages</div>
+      <div class="marquee-item"><span class="mi-icon">✨</span> AI auto-naming</div>
+      <div class="marquee-item"><span class="mi-icon">☁️</span> Cloudinary-powered storage</div>
+      <div class="marquee-item"><span class="mi-icon">📄</span> Multi-page PDF export</div>
+      <div class="marquee-item"><span class="mi-icon">🔏</span> Digital signatures</div>
+      <div class="marquee-item"><span class="mi-icon">📱</span> QR code scanner</div>
+      <div class="marquee-item"><span class="mi-icon">🔄</span> Real-time sync</div>
+      <div class="marquee-item"><span class="mi-icon">🪪</span> ID card mode</div>
+      <div class="marquee-item"><span class="mi-icon">🤖</span> Claude AI integration</div>
+    </div>
+  </div>
+
+  <!-- ══ FEATURES TEASER ══ -->
+  <section class="features-page" style="padding-top:80px;padding-bottom:60px;">
+    <div class="reveal features-intro">
+      <div class="sec-label">Features</div>
+      <h2 class="display-md" style="font-size:clamp(34px,4vw,52px);margin-bottom:12px;">Everything you need,<br>nothing you don't</h2>
+      <p style="font-size:16px;color:var(--muted);line-height:1.7;font-weight:300;">Built for professionals who need speed without sacrificing quality. Every feature ships with intelligence baked in.</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-green">📷</div>
+        <div class="feat-name">Smart Scanner</div>
+        <div class="feat-desc">Auto-detects document edges in real-time. Adjust four crop handles or let AI handle it perfectly.</div>
+        <div class="feat-num">01</div>
+      </div>
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-teal">🔍</div>
+        <div class="feat-name">OCR Extraction</div>
+        <div class="feat-desc">Google Vision-powered text extraction with 99% accuracy. Supports handwriting, tables, and 40+ languages.</div>
+        <div class="feat-num">02</div>
+      </div>
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-coral">✨</div>
+        <div class="feat-name">AI Auto-Naming</div>
+        <div class="feat-desc">Claude reads your document's content and suggests the perfect filename and category automatically.</div>
+        <div class="feat-num">03</div>
+      </div>
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-teal">🎨</div>
+        <div class="feat-name">Image Enhancement</div>
+        <div class="feat-desc">Shadow removal, brightness, contrast, and auto-whiteboard mode. Powered by Sharp on Cloudinary.</div>
+        <div class="feat-num">04</div>
+      </div>
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-coral">🔏</div>
+        <div class="feat-name">Digital Signatures</div>
+        <div class="feat-desc">Draw, type, or upload your signature. Embed it precisely on any page and export as a signed PDF.</div>
+        <div class="feat-num">05</div>
+      </div>
+      <div class="feat-cell accent-top">
+        <div class="feat-icon fi-green">☁️</div>
+        <div class="feat-name">Cloud Sync</div>
+        <div class="feat-desc">Cloudinary + Firebase keep every scan in sync across all your devices in real-time with zero friction.</div>
+        <div class="feat-num">06</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="pages/features.html" class="btn btn-ghost">View all features →</a>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS TEASER ══ -->
+  <section class="how-page" style="padding-top:40px;">
+    <div class="reveal">
+      <div class="sec-label">How it works</div>
+      <h2 class="display-md" style="font-size:clamp(34px,4vw,52px);margin-bottom:12px;">From paper to PDF<br>in four steps</h2>
+    </div>
+    <div class="how-layout reveal">
+      <div class="steps-list">
+        <div class="step-row active" data-step="0">
+          <div class="step-circle">1</div>
+          <div><div class="step-title">Capture</div><div class="step-desc">Point your camera at any document. ScanFlow auto-detects edges and shows a live crop overlay.</div></div>
+        </div>
+        <div class="step-row" data-step="1">
+          <div class="step-circle">2</div>
+          <div><div class="step-title">Enhance</div><div class="step-desc">Adjust brightness, remove shadows, or apply filters. See changes live before saving.</div></div>
+        </div>
+        <div class="step-row" data-step="2">
+          <div class="step-circle">3</div>
+          <div><div class="step-title">Extract</div><div class="step-desc">AI reads your document and extracts text via OCR, then suggests a filename and category.</div></div>
+        </div>
+        <div class="step-row" data-step="3">
+          <div class="step-circle">4</div>
+          <div><div class="step-title">Export &amp; Sync</div><div class="step-desc">Export as PDF, Word, or plain text. Synced to Cloudinary and accessible from any device instantly.</div></div>
+        </div>
+      </div>
+      <div class="step-visual">
+        <div id="step-visual" style="text-align:center;position:relative;z-index:1;">
+          <div style="position:relative;display:inline-block;">
+            <div class="vis-badge vis-badge-1" style="color:var(--accent2)"><span class="vb-dot" style="background:var(--accent2)"></span>Edge detected</div>
+            <div class="scan-mock">
+              <div class="scan-beam"></div>
+              <div class="scan-corner-mark sc-tl"></div><div class="scan-corner-mark sc-tr"></div>
+              <div class="scan-corner-mark sc-bl"></div><div class="scan-corner-mark sc-br"></div>
+              <div class="scan-lines">
+                <div class="scan-line-item"></div><div class="scan-line-item"></div><div class="scan-line-item"></div>
+                <div class="scan-line-item"></div><div class="scan-line-item"></div><div class="scan-line-item"></div>
+                <div class="scan-line-item"></div><div class="scan-line-item"></div>
+              </div>
+            </div>
+            <div class="vis-badge vis-badge-2" style="color:var(--accent)">✨ Auto-crop ready</div>
+          </div>
+          <div style="font-size:13px;color:var(--muted);margin-top:20px;">Live camera — <strong style="color:#fff">auto-detecting edges</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testi-page" style="padding-top:40px;">
+    <div class="reveal" style="text-align:center;">
+      <div class="sec-label" style="justify-content:center;">Testimonials</div>
+      <h2 class="display-md" style="font-size:clamp(34px,4vw,52px);">Loved by people<br>who hate paper</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"I used to spend 20 minutes scanning one contract. ScanFlow does it in under a minute with better results. The AI naming feature is witchcraft."</div>
+        <div class="testi-author"><div class="testi-av av-g">RK</div><div><div class="testi-name">Rahul Kapoor</div><div class="testi-role">Freelance Architect, Mumbai</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"The OCR accuracy is insane. It correctly read my doctor's handwriting — something I can barely do myself. Game changer for medical records."</div>
+        <div class="testi-author"><div class="testi-av av-t">PS</div><div><div class="testi-name">Priya Subramaniam</div><div class="testi-role">Healthcare Admin, Chennai</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"We use it across 5 team members for client onboarding. The shared folders and digital signatures cut our paperwork time by 70%."</div>
+        <div class="testi-author"><div class="testi-av av-c">AV</div><div><div class="testi-name">Arjun Verma</div><div class="testi-role">Founder, LegalEase, Bengaluru</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section reveal">
+    <div class="cta-banner">
+      <h2 class="cta-title display-md">Your paper era<br>ends today.</h2>
+      <p class="cta-sub">Join thousands who've already made the switch. First 30 scans are on us.</p>
+      <div class="cta-acts">
+        <a href="pages/login.html"  class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Start scanning for free
+        </a>
+        <a href="pages/features.html" class="btn btn-ghost">View all features →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="island-logo"><div class="island-logo-dot"></div>ScanFlow</a>
+        <p>The intelligent document scanner for web and mobile. Built for individuals and teams who need speed without compromise.</p>
+        <div class="footer-socials" style="margin-top:18px;">
+          <a href="#" class="soc-btn">𝕏</a><a href="#" class="soc-btn">in</a>
+          <a href="#" class="soc-btn">▶</a><a href="#" class="soc-btn">📸</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="pages/features.html">Features</a></li>
+        <li><a href="pages/pricing.html">Pricing</a></li>
+        <li><a href="pages/scanner.html">Scanner</a></li>
+        <li><a href="#">Changelog</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Tools</h4><ul>
+        <li><a href="#">OCR Scanner</a></li>
+        <li><a href="#">PDF Creator</a></li>
+        <li><a href="#">QR Reader</a></li>
+        <li><a href="#">Signature Tool</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 ScanFlow. All rights reserved.</span>
+      <span>Made with ♥ for the paperless world</span>
+    </div>
+  </footer>
+
+</div><!-- /sf-page -->
+
+<div id="sf-toast"><div class="toast-ico">✅</div><div><div class="toast-title">Done</div><div class="toast-msg"></div></div></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

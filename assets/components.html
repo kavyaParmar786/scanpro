@@ -1,0 +1,130 @@
+<!--
+  SCANFLOW — SHARED COMPONENTS
+  Include this file's content in every page via JS or copy-paste.
+  
+  Components: Cursor · BG · Grain · Navbar · Toast · Footer
+-->
+
+<!-- ══ CURSOR ══ -->
+<div id="sf-cursor"><img src="data:image/jpeg;base64,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" alt=""></div>
+<div id="sf-cursor-glow"></div>
+
+<!-- ══ FLUID NEON BACKGROUND ══ -->
+<div id="sf-bg" aria-hidden="true"></div>
+
+<!-- ══ GRAIN ══ -->
+<div id="sf-grain" aria-hidden="true"></div>
+
+<!-- ══ DYNAMIC ISLAND NAVBAR ══ -->
+<div id="sf-nav-wrap">
+  <nav id="sf-island" role="navigation" aria-label="Main navigation">
+    <!-- Logo -->
+    <a href="../index.html" class="island-logo">
+      <div class="island-logo-dot"></div>
+      ScanFlow
+    </a>
+
+    <!-- Separator -->
+    <div class="island-sep"></div>
+
+    <!-- Links -->
+    <div class="island-links">
+      <a href="../index.html"           class="island-link" data-page="index.html">Home</a>
+      <a href="features.html"           class="island-link" data-page="features.html">Features</a>
+      <a href="scanner.html"            class="island-link" data-page="scanner.html">Scanner</a>
+      <a href="pricing.html"            class="island-link" data-page="pricing.html">Pricing</a>
+      <a href="dashboard.html"          class="island-link" data-page="dashboard.html">Dashboard</a>
+    </div>
+
+    <!-- Notification pill (injected by JS) -->
+    <div id="island-notif" class="island-notif">
+      <div class="notif-icon">📄</div>
+      <div class="notif-text">
+        <div class="notif-title">Document synced</div>
+        <div class="notif-sub">Uploading to Cloudinary...</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="login.html" class="island-cta">
+      Start free
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="island-hamburger" id="sf-ham" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</div>
+
+<!-- Mobile menu -->
+<div id="sf-mob-menu" class="island-mobile-menu" role="dialog">
+  <a href="../index.html"  class="mob-link">🏠 Home</a>
+  <a href="features.html"  class="mob-link">⚡ Features</a>
+  <a href="scanner.html"   class="mob-link">📷 Scanner</a>
+  <a href="pricing.html"   class="mob-link">💳 Pricing</a>
+  <a href="dashboard.html" class="mob-link">📊 Dashboard</a>
+  <a href="login.html"     class="mob-link" style="color:var(--accent);font-weight:600;">→ Get started free</a>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div id="sf-toast" role="alert" aria-live="polite">
+  <div class="toast-ico">✅</div>
+  <div>
+    <div class="toast-title">Done</div>
+    <div class="toast-msg"></div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="island-logo" style="font-size:18px;">
+        <div class="island-logo-dot"></div>ScanFlow
+      </a>
+      <p>The intelligent document scanner for web and mobile. Built for individuals and teams who need speed without compromise.</p>
+      <div class="footer-socials" style="margin-top:18px;">
+        <a href="#" class="soc-btn">𝕏</a>
+        <a href="#" class="soc-btn">in</a>
+        <a href="#" class="soc-btn">▶</a>
+        <a href="#" class="soc-btn">📸</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="scanner.html">Scanner</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="#">OCR Scanner</a></li>
+        <li><a href="#">PDF Creator</a></li>
+        <li><a href="#">QR Reader</a></li>
+        <li><a href="#">Signature Tool</a></li>
+        <li><a href="#">ID Card Scanner</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 ScanFlow. All rights reserved.</span>
+    <span>Made with ♥ for the paperless world</span>
+  </div>
+</footer>
