@@ -10,35 +10,132 @@
   const CURSOR_B64 = 'data:image/jpeg;base64,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';
 
   function initCursor() {
-    // Cursor is handled via CSS cursor: url() - we only animate the ring
-    const ring = document.getElementById('sf-cursor-ring');
-    if (!ring) return;
+    // ── WAVE CURSOR ENGINE ──
+    // Draws animated ripple/wave arcs that trail behind cursor movement
+    // The CSS sets the actual arrow pointer; this canvas adds the wave effect on top
 
-    let rx = -200, ry = -200, mx = -200, my = -200;
+    const container = document.getElementById('sf-cursor-ring');
+    if (!container) return;
+
+    // Create a full-viewport canvas for the wave trail
+    const cvs = document.createElement('canvas');
+    cvs.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99998;';
+    cvs.width  = window.innerWidth;
+    cvs.height = window.innerHeight;
+    document.body.appendChild(cvs);
+    const ctx = cvs.getContext('2d');
+
+    window.addEventListener('resize', () => {
+      cvs.width  = window.innerWidth;
+      cvs.height = window.innerHeight;
+    });
+
+    let mx = -300, my = -300;   // real mouse pos
+    let px = -300, py = -300;   // smoothed pos
+    let clicked = false;
+
+    // Trail: array of {x, y, age, speed} points — wave nodes
+    const trail = [];
+    const MAX_TRAIL = 28;
 
     document.addEventListener('mousemove', e => {
       mx = e.clientX;
       my = e.clientY;
     });
 
-    // Smooth lagging ring
-    function animateRing() {
-      rx += (mx - rx) * 0.14;
-      ry += (my - ry) * 0.14;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
+    document.addEventListener('mousedown', () => { clicked = true;  });
+    document.addEventListener('mouseup',   () => { clicked = false; });
 
-    document.addEventListener('mousedown', () => {
-      ring.style.transform = 'translate(-50%,-50%) scale(0.75)';
-      ring.style.borderColor = 'rgba(0,229,200,0.9)';
-    });
-    document.addEventListener('mouseup', () => {
-      ring.style.transform = 'translate(-50%,-50%) scale(1)';
-      ring.style.borderColor = 'rgba(200,255,0,0.45)';
-    });
+    function drawWave() {
+      // Smooth follow
+      px += (mx - px) * 0.18;
+      py += (my - py) * 0.18;
+
+      // Push new trail point
+      trail.push({ x: px, y: py, age: 0, vx: (Math.random()-0.5)*0.6, vy: (Math.random()-0.5)*0.6 });
+      if (trail.length > MAX_TRAIL) trail.shift();
+
+      // Advance ages
+      trail.forEach(p => { p.age++; p.x += p.vx; p.y += p.vy; p.vx *= 0.96; p.vy *= 0.96; });
+
+      // Clear
+      ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+      // ── Draw wave arcs at cursor tip ──
+      const numArcs = clicked ? 5 : 3;
+      for (let a = 0; a < numArcs; a++) {
+        const phase   = (Date.now() * 0.003) + a * 1.1;
+        const radius  = 14 + a * 11 + Math.sin(phase) * 4;
+        const alpha   = (0.55 - a * 0.14) * (clicked ? 1.6 : 1);
+        const sweep   = Math.PI * (0.55 + a * 0.07);           // arc length
+        const rotOff  = -Math.PI * 0.72 + Math.sin(phase * 0.7) * 0.18; // rotation drift
+
+        ctx.beginPath();
+        ctx.arc(mx, my, radius, rotOff, rotOff + sweep);
+
+        const grad = ctx.createLinearGradient(
+          mx + Math.cos(rotOff) * radius,
+          my + Math.sin(rotOff) * radius,
+          mx + Math.cos(rotOff + sweep) * radius,
+          my + Math.sin(rotOff + sweep) * radius
+        );
+        const col = clicked ? '0,229,200' : '200,255,0';
+        grad.addColorStop(0,   `rgba(${col},0)`);
+        grad.addColorStop(0.4, `rgba(${col},${(alpha * 0.9).toFixed(3)})`);
+        grad.addColorStop(1,   `rgba(${col},${alpha.toFixed(3)})`);
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth   = clicked ? 2.2 - a * 0.28 : 1.8 - a * 0.25;
+        ctx.lineCap     = 'round';
+        ctx.shadowColor = `rgba(${col}, 0.4)`;
+        ctx.shadowBlur  = 6;
+        ctx.stroke();
+        ctx.shadowBlur  = 0;
+      }
+
+      // ── Draw glowing trail dots ──
+      trail.forEach((p, i) => {
+        const life  = 1 - p.age / MAX_TRAIL;
+        if (life <= 0) return;
+        const col   = (i % 3 === 0) ? '200,255,0' : (i % 3 === 1) ? '0,229,200' : '200,255,0';
+        const r     = life * 2.8;
+        const alpha = life * 0.65;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${col},${alpha.toFixed(3)})`;
+        ctx.shadowColor = `rgba(${col},${(alpha * 0.6).toFixed(3)})`;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      // ── Draw connecting wave line through trail ──
+      if (trail.length > 4) {
+        ctx.beginPath();
+        ctx.moveTo(trail[0].x, trail[0].y);
+        for (let i = 1; i < trail.length - 2; i++) {
+          const cpx = (trail[i].x + trail[i+1].x) / 2;
+          const cpy = (trail[i].y + trail[i+1].y) / 2;
+          ctx.quadraticCurveTo(trail[i].x, trail[i].y, cpx, cpy);
+        }
+        const wGrad = ctx.createLinearGradient(
+          trail[0].x, trail[0].y,
+          trail[trail.length-1].x, trail[trail.length-1].y
+        );
+        wGrad.addColorStop(0,   'rgba(200,255,0,0)');
+        wGrad.addColorStop(0.5, 'rgba(200,255,0,0.12)');
+        wGrad.addColorStop(1,   'rgba(200,255,0,0.32)');
+        ctx.strokeStyle = wGrad;
+        ctx.lineWidth   = 1.2;
+        ctx.lineCap     = 'round';
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(drawWave);
+    }
+
+    drawWave();
   }
 
   /* ── FLUID NEON CANVAS ── */
